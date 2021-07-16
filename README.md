@@ -1,9 +1,6 @@
-npm install nodejs
-npm install express -s
-npm install mysql
-npm install nodemon
-nodemon app.js
+npm install nodejs express -s mysql nodemon
 
+No terminal: nodemon app.js
 Acesse: http://localhost:8080/
 
 Back-end
