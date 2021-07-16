@@ -6,12 +6,12 @@ Criação de um portal para um plano de saúde fictcío onde o usuário que aces
 Para a visualização das vacinas o usuário precisa estar previamente cadastrado e autênticado na página.
 
 ## Arquitetura
-Engine JS: NodeJs
-Framework: Express
-Banco de Dados: Mysql
-Front-end: HTML
+* Engine JS: NodeJs
+* Framework: Express
+* Banco de Dados: Mysql
+* Front-end: HTML
 
-npm install nodejs express -s mysql nodemon
-
-No terminal: nodemon app.js
-Acesse: http://localhost:8080/
+## Execução
+* npm install nodejs express -s mysql nodemon
+* No terminal: nodemon app.js
+* Acesse: http://localhost:8080/
