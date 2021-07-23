@@ -23,114 +23,113 @@ app.get('/cadastro', function (req, res) {
 });
 
 app.get('/fonts/icomoon/style.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/fonts/icomoon/style.css');
+    res.sendFile(__dirname + '/assets/fonts/icomoon/style.css');
 });
 
 app.get('/css/bootstrap.min.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/bootstrap.min.css');
+    res.sendFile(__dirname + '/assets/css/bootstrap.min.css');
 });
 
 app.get('/css/magnific-popup.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/magnific-popup.css');
+    res.sendFile(__dirname + '/assets/css/magnific-popup.css');
 });
 
 app.get('/css/jquery-ui.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/jquery-ui.css');
+    res.sendFile(__dirname + '/assets/css/jquery-ui.css');
 });
 
 app.get('/css/owl.theme.default.min.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/owl.theme.default.min.css');
+    res.sendFile(__dirname + '/assets/css/owl.theme.default.min.css');
 });
 
 app.get('/css/owl.carousel.min.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/owl.carousel.min.css');
+    res.sendFile(__dirname + '/assets/css/owl.carousel.min.css');
 });
 
 app.get('/css/aos.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/aos.css');
+    res.sendFile(__dirname + '/assets/css/aos.css');
 });
 
 app.get('/css/style.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/style.css');
+    res.sendFile(__dirname + '/assets/css/style.css');
 });
 
-
 app.get('/css/style.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/style.css');
+    res.sendFile(__dirname + '/assets/css/style.css');
 });
 app.get('/css/style.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/style.css');
+    res.sendFile(__dirname + '/assets/css/style.css');
 });
 app.get('/css/style.css', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/css/style.css');
+    res.sendFile(__dirname + '/assets/css/style.css');
 });
 
 app.get('/images/product_01.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_01.png');
+    res.sendFile(__dirname + '/assets/images/product_01.png');
 });
 
 app.get('/images/product_02.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_02.png');
+    res.sendFile(__dirname + '/assets/images/product_02.png');
 });
 
 app.get('/images/product_03.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_03.png');
+    res.sendFile(__dirname + '/assets/images/product_03.png');
 });
 
 app.get('/images/product_04.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_04.png');
+    res.sendFile(__dirname + '/assets/images/product_04.png');
 });
 
 app.get('/images/product_05.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_05.png');
+    res.sendFile(__dirname + '/assets/images/product_05.png');
 });
 
 app.get('/images/product_06.png', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/product_06.png');
+    res.sendFile(__dirname + '/assets/images/product_06.png');
 });
 
 app.get('/js/jquery-3.3.1.min.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/jquery-3.3.1.min.js');
+    res.sendFile(__dirname + '/assets/js/jquery-3.3.1.min.js');
 });
 
 app.get('/js/jquery-ui.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/jquery-ui.js');
+    res.sendFile(__dirname + '/assets/js/jquery-ui.js');
 });
 
 app.get('/js/popper.min.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/popper.min.js');
+    res.sendFile(__dirname + '/assets/js/popper.min.js');
 });
 
 app.get('/js/bootstrap.min.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/bootstrap.min.js');
+    res.sendFile(__dirname + '/assets/js/bootstrap.min.js');
 });
 
 app.get('/js/owl.carousel.min.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/owl.carousel.min.js');
+    res.sendFile(__dirname + '/assets/js/owl.carousel.min.js');
 });
 
 app.get('/js/jquery.magnific-popup.min.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/jquery.magnific-popup.min.js');
+    res.sendFile(__dirname + '/assets/js/jquery.magnific-popup.min.js');
 });
 
 app.get('/js/aos.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/aos.js');
+    res.sendFile(__dirname + '/assets/js/aos.js');
 });
 
 app.get('/js/main.js', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/js/main.js');
+    res.sendFile(__dirname + '/assets/js/main.js');
 });
 
 app.get('/fonts/icomoon/fonts/icomoon.ttf?10si43', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/fonts/icomoon/fonts/icomoon.ttf?10si43');
+    res.sendFile(__dirname + '/assets/fonts/icomoon/fonts/icomoon.ttf?10si43');
 });
 
 app.get('/images/hero_1.jpg', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/images/hero_1.jpg');
+    res.sendFile(__dirname + '/assets/images/hero_1.jpg');
 });
 
 app.get('/fonts/icomoon/fonts/icomoon.woff?10si43', function (req, res) {
-    res.sendFile(__dirname + '/components/portal/fonts/icomoon/fonts/icomoon.woff?10si43');
+    res.sendFile(__dirname + '/assets/fonts/icomoon/fonts/icomoon.woff?10si43');
 });
 
 console.log(__dirname);
