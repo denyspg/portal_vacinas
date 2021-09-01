@@ -26,7 +26,7 @@ function verificaEmailBranco(){
 };
 
 function verificaSenhaBranco(){
-    var email=document.querySelector('#senha').value;
+    var senha=document.querySelector('#senha').value;
     if (senha==''){
         alert("O campo não pode ficar vazio!");
     }
