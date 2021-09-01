@@ -1,9 +1,9 @@
-let infoBCG = document.getElementById("infoBCG")
-let infoPfizer = document.getElementById("infoPfizer")
-let infoH1N1 = document.getElementById("infoH1N1")
-let infoFebreAmarela = document.getElementById("infoFebreAmarela")
-let infoPolio = document.getElementById("infoPolio")
-let infoRotavirus = document.getElementById("infoRotavirus")
+const infoBCG = document.getElementById("infoBCG")
+const infoPfizer = document.getElementById("infoPfizer")
+const infoH1N1 = document.getElementById("infoH1N1")
+const infoFebreAmarela = document.getElementById("infoFebreAmarela")
+const infoPolio = document.getElementById("infoPolio")
+const infoRotavirus = document.getElementById("infoRotavirus")
 
 infoBCG.addEventListener('click', () =>{
     alert('A vacina BCG é dada quando se é bebezinho e fica marquinha no braço')
