@@ -1,38 +1,33 @@
-// Buscar email e senha no Banco de dados (que ainda não existe)
-let email = document.getElementById("email");
-let senha = document.getElementById("senha");
-
 function logar(){
-    var email=document.querySelector('#email').value;
-    var senha = document.getElementById("senha");
+    const email= document.getElementById("email");
+    const senha = document.getElementById("senha");
 
-    console.log(email.value + senha.value);
+    if(!validaEmail()){
+        alert('Insira a senha!');
+        return;
+    }
 
-    if(email == "email@padrao.ufsc" && senha.value == "senha123"){
-        localStorage.setItem("acesso", true);
-        alert("Usuario autenticado");
-        //window.location.href = "index.html"
-    }else{
-        alert("Usuario ou senha invalidos.")
+    if(!senha.value.length){
+        alert('Insira a senha!');
+        return;
     }
 }
 
-function verificaEmailBranco(){
-    var email=document.querySelector('#email').value;
-    if (email==''){
-        alert("O campo não pode ficar vazio!");
+function validaEmail(){
+    const componente = document.getElementById('email');
+    usuario = componente.value.substring(0, componente.value.indexOf("@"));
+    dominio = componente.value.substring(componente.value.indexOf("@")+ 1, componente.value.length);
+
+    if ((usuario.length >=1) &&
+        (dominio.length >=3) &&
+        (usuario.search("@")==-1) &&
+        (dominio.search("@")==-1) &&
+        (usuario.search(" ")==-1) &&
+        (dominio.search(" ")==-1) &&
+        (dominio.search(".")!=-1) &&
+        (dominio.indexOf(".") >=1)&&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+            return true;
     }
-};
-
-function verificaSenhaBranco(){
-    var senha=document.querySelector('#senha').value;
-    if (senha==''){
-        alert("O campo não pode ficar vazio!");
-    }
-};
-
-
-email.addEventListener("blur", verificaEmailBranco, true);
-senha.addEventListener("blur", verificaSenhaBranco, true);
-email.addEventListener("blur", logar, true);
-senha.addEventListener("blur", logar, true);
+    return false;
+}
