@@ -1,39 +1,32 @@
-let email = document.getElementById("email");
-let primeiroNome = document.getElementById("primeiroNome");
-let ultimoNome = document.getElementById("ultimoNome");
-let senha = document.getElementById("senha");
-
-
-function verificaPrimeiroNomeBranco(){
-   var primeiroNome=document.querySelector('#primeiroNome').value;
-    if (primeiroNome==''){
-      alert("O campo não pode ficar vazio!");
+function verificaPreenchimento(nomeComponente){
+    const componente = document.getElementById(nomeComponente);
+    const valorComponente = componente.value;
+    if (valorComponente==''){
+        alert("O campo não pode ficar vazio!");
     } 
 };
 
-function verificaUltimoNomeBranco(){
-    var ultimoNome=document.querySelector('#ultimoNome').value;
-    if (ultimoNome==''){
-        alert("O campo não pode ficar vazio!");
+function cadastrar(){
+    validaEmail();
+}
+
+function validaEmail(){
+    const componente = document.getElementById('email');
+    usuario = componente.value.substring(0, componente.value.indexOf("@"));
+    dominio = componente.value.substring(componente.value.indexOf("@")+ 1, componente.value.length);
+
+    if ((usuario.length >=1) &&
+        (dominio.length >=3) &&
+        (usuario.search("@")==-1) &&
+        (dominio.search("@")==-1) &&
+        (usuario.search(" ")==-1) &&
+        (dominio.search(" ")==-1) &&
+        (dominio.search(".")!=-1) &&
+        (dominio.indexOf(".") >=1)&&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+            console.log("E-mail valido");
     }
-};
-
-function verificaEmailBranco(){
-    var email=document.querySelector('#email').value;
-    if (email==''){
-        alert("O campo não pode ficar vazio!");
+    else{
+        alert("E-mail invalido");
     }
-};
-
-function verificaSenhaBranco(){
-    var senha=document.querySelector('#senha').value;
-    if (senha==''){
-        alert("O campo não pode ficar vazio!");
-    }
-};
-
-
-email.addEventListener("blur", verificaEmailBranco, true);
-primeiroNome.addEventListener("blur", verificaPrimeiroNomeBranco, true);
-ultimoNome.addEventListener("blur", verificaUltimoNomeBranco, true);
-senha.addEventListener("blur", verificaSenhaBranco, true);
+}
