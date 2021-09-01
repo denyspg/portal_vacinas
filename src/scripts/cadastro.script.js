@@ -1,6 +1,8 @@
 let email = document.getElementById("email");
 let primeiroNome = document.getElementById("primeiroNome");
 let ultimoNome = document.getElementById("ultimoNome");
+let senha = document.getElementById("senha");
+
 
 function verificaPrimeiroNomeBranco(){
    var primeiroNome=document.querySelector('#primeiroNome').value;
@@ -23,6 +25,15 @@ function verificaEmailBranco(){
     }
 };
 
+function verificaSenhaBranco(){
+    var email=document.querySelector('#senha').value;
+    if (senha==''){
+        alert("O campo não pode ficar vazio!");
+    }
+};
+
+
 email.addEventListener("blur", verificaEmailBranco, true);
 primeiroNome.addEventListener("blur", verificaPrimeiroNomeBranco, true);
 ultimoNome.addEventListener("blur", verificaUltimoNomeBranco, true);
+senha.addEventListener("blur", verificaSenhaBranco, true);
