@@ -7,7 +7,27 @@ function verificaPreenchimento(nomeComponente){
 };
 
 function cadastrar(){
-    validaEmail();
+
+    console.log('entrou na função')
+    //validaEmail();
+    const usuario = {
+        nome:'jose',
+        sobrenome:'ribamar',
+        email:'jose@ribamar.com',
+        senha:'1234'
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials= true;
+    xhr.open('POST', 'http://localhost:8080/Cadastro');
+    xhr.setRequestHeader("Content-type", "application/json");
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4) {
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.send(JSON.stringify(usuario));
 }
 
 function validaEmail(){
