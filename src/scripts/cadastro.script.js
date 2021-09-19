@@ -9,25 +9,30 @@ function verificaPreenchimento(nomeComponente){
 function cadastrar(){
 
     console.log('entrou na função')
-    //validaEmail();
+    const nome = document.getElementById('nome').value;
+    const sobrenome = document.getElementById('ultimo-nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+
     const usuario = {
-        nome:'jose',
-        sobrenome:'ribamar',
-        email:'jose@ribamar.com',
-        senha:'1234'
-    }
+        nome,
+        sobrenome,
+        email,
+        senha
+    };
 
     const xhr = new XMLHttpRequest();
-    xhr.withCredentials= true;
     xhr.open('POST', 'http://localhost:8080/Cadastro');
     xhr.setRequestHeader("Content-type", "application/json");
-
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
             console.log(xhr.responseText);
         }
     }
+
+    if(validaEmail()){
     xhr.send(JSON.stringify(usuario));
+    }
 }
 
 function validaEmail(){
@@ -45,6 +50,7 @@ function validaEmail(){
         (dominio.indexOf(".") >=1)&&
         (dominio.lastIndexOf(".") < dominio.length - 1)) {
             console.log("E-mail valido");
+            return true;
     }
     else{
         alert("E-mail invalido");
