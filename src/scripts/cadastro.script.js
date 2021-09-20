@@ -28,7 +28,7 @@ function cadastrar() {
 		}
 	};
 
-	if (validaEmail()) {
+	if (validaEmail() && nome!=='' && sobrenome !== '') {
 		xhr.send(JSON.stringify(usuario));
 	}
 }
