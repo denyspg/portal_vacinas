@@ -28,3 +28,23 @@ function exibeDescricao (nomeVacina){
         alert('Descrição não cadastrada ou vacina não encontrada.');
     }
 }
+
+function pesquisaVacina() {
+    const nomeVacina = document.getElementById('buscaVacina').value;
+
+    if (nomeVacina !== '') {
+	
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', 'http://localhost:8080/ListaVacinas/:nome');
+	xhr.setRequestHeader('Content-type', 'application/json');
+	xhr.onreadystatechange = () => {
+		if (xhr.readyState == 4) {
+			console.log(xhr.responseText);
+		}
+	};
+
+	xhr.send();
+	}else{
+        alert('É necessário preencher o nome da vacina!')
+    }
+}
