@@ -40,7 +40,7 @@
     </div>
 
     <div class="site-blocks-cover" style="background-image: url('../assets/images/hero_1.jpg');">
-      <div class="container">
+      <div class="container"></div>
         <h1>Catalogo de Vacinas</h1>
         <div class="row">
           <div class="col-md-4">
@@ -49,77 +49,13 @@
             class="form-control"
             placeholder="Digite aqui o nome da vacina desejada"
             type="text">
+          </div>
+          <div>
             <button 
-              id="botaoBuscar" 
-              type="button"
-              class="btn"
-              onclick="pesquisaVacina()">Buscar</button>
-                <p>
-                  <h3>BCG</h3>
-                  <img src="../assets/images/vacBCG.png" alt="Vacina BCG" width="200" height="300">
-                  <button
-                    id="infoBCG"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('bcg')" >Mais informações</button>
-                </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Covid-19 (Pfizer)</h3>
-                <img src="../assets/images/vacPfizer.png" alt="Vacina Pfizer" width="200" height="300">
-                <button
-                    id="infoPfizer"
-                    type="button"
-                    class="btn"
-                    width="200"
-                    onclick="exibeDescricao('pfizer')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Gripe (H1N1)</h3>
-                <img src="../assets/images/vacH1N1.png" alt="Vacina H1N1" width="200" height="300">
-                <button
-                    id="infoH1N1"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('h1n1')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Febre Amarela</h3>
-                <img src="../assets/images/vacFebreAmarela.png" alt="Vacina Febre Amarela" width="200" height="300">
-                <button
-                    id="infoFebreAmarela"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('febreAmarela')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Poliomelite</h3>
-                <img src="../assets/images/vacPolio.png" alt="Vacina Poliomelite" width="200" height="300">
-                <button
-                    id="infoPolio"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('polio')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Rotavirus</h3>
-                <img src="../assets/images/vacRotavirus.png" alt="Vacina Rotavirus" width="200" height="300">
-                <button
-                    id="infoRotavirus"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('rotaVirus')">Mais informações</button>
-              </p>
-            </div>
+            id="botaoBuscar" 
+            type="button"
+            class="btn btn-primary px-5 py-3"
+            onclick="pesquisaVacina()">Buscar</button>
           </div>
         </div>
       </div>

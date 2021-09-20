@@ -35,8 +35,18 @@ function pesquisaVacina() {
     if (nomeVacina !== '') {
 	
 	const xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://localhost:8080/ListaVacinas/:nome');
-	xhr.setRequestHeader('Content-type', 'application/json');
+    if (nomeVacina == 'gripe' || nomeVacina == 'Gripe') {
+        xhr.open('GET', 'http://localhost:8080/ListaVacinas/Gripe');        
+    }
+
+    if (nomeVacina == 'polio' || nomeVacina == 'Poliomelite' || nomeVacina =='Polio') {
+        xhr.open('GET', 'http://localhost:8080/ListaVacinas/Poliomelite');        
+    }
+
+    if (nomeVacina == 'covid' || nomeVacina == 'Covid19' || nomeVacina == 'pfizer' || nomeVacina == 'Pfizer') {
+        xhr.open('GET', 'http://localhost:8080/ListaVacinas/Pfizer');        
+    }
+
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState == 4) {
 			console.log(xhr.responseText);
