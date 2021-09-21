@@ -40,28 +40,36 @@
     </div>
 
     <div class="site-blocks-cover" style="background-image: url('../assets/images/hero_1.jpg');">
-      <div class="container"></div>
-        <h1>Catalogo de Vacinas</h1>
+      <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <input 
-            id="buscaVacina"
-            class="form-control"
-            placeholder="Digite aqui o nome da vacina desejada"
-            type="text">
-          </div>
-          <div>
-            <button 
-            id="botaoBuscar" 
-            type="button"
-            class="btn btn-primary px-5 py-3"
-            onclick="pesquisaVacina()">Buscar</button>
+          <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+            <div class="site-block-cover-content text-center">
+              <h1>Catalogo de Vacinas</h1>
+                <p>
+                  <input 
+                    id="buscaVacina"
+                    class="form-control"
+                    placeholder="Digite aqui o nome da vacina desejada"
+                    type="text">
+                   <br>
+                  <br>
+                  <button 
+                    id="botaoBuscar" 
+                    type="button"
+                    class="btn btn-primary px-5 py-3"
+                    onclick="pesquisaVacina()">Buscar</button>
+                  <button 
+                    id="botaoBuscarTodas" 
+                    type="button"
+                    class="btn btn-primary px-5 py-3"
+                    onclick="buscaTodasVacinas()">Todas as vacinas</button>
+                </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <footer class="site-footer">
+        <footer class="site-footer">
       <class class="container">
         <div class="row">
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
