@@ -18,7 +18,7 @@ function pesquisaVacina() {
     xhr.setRequestHeader('Content-type', 'application/json')
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState == 4) {
-			console.log(xhr.responseText);
+			console.log(JSON.parse(xhr.response));
 		}
 	};
 
@@ -34,29 +34,8 @@ function buscaTodasVacinas() {
     xhr.setRequestHeader('Content-type', 'application/json')
     xhr.responseType = 'json';
 	xhr.send();
-    xhr.onload = listaVacinas(xhr.response);
-}
-
-function listaVacinas(JsonObj) {
-    var vacinas = JsonObj['vacinas'];
-  
-    for (var i = 0; i < vacinas.length; i++) {
-      var myArticle = document.createElement('article');
-      var myH2 = document.createElement('h2');
-      var myPara1 = document.createElement('p');
-      var myPara2 = document.createElement('p');
-      var myPara3 = document.createElement('p');
-  
-      myH2.textContent = vacinas[i].name;
-      myPara1.textContent = 'Nome: ' + vacinas[i].nome;
-      myPara2.textContent = 'Descrição: ' + vacinas[i].descricao;
-  
-        
-      myArticle.appendChild(myH2);
-      myArticle.appendChild(myPara1);
-      myArticle.appendChild(myPara2);
-      myArticle.appendChild(myPara3);
-  
-      section.appendChild(myArticle);
+    xhr.onload = function() {
+        const vacinas = xhr.response;
+        console.log(vacinas);
     }
-  }
+}
