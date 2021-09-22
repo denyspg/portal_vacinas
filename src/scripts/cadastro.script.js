@@ -1,36 +1,33 @@
-function verificaPreenchimento(nomeComponente) {
-	const componente = document.getElementById(nomeComponente);
-	const valorComponente = componente.value;
-	if (valorComponente == '') {
-		alert('O campo não pode ficar vazio!');
-	}
-}
-
 function cadastrar() {
 	const nome = document.getElementById('nome').value;
 	const sobrenome = document.getElementById('ultimo-nome').value;
 	const email = document.getElementById('email').value;
 	const senha = document.getElementById('senha').value;
+    
+	if (!validaEmail() || !nome || !sobrenome || !senha) {
+		alert('Dados inválidos!');
+	}
 
 	const usuario = {
-		nome,
-		sobrenome,
-		email,
-		senha
+		nome: nome,
+		sobrenome: sobrenome,
+		email: email,
+		senha: senha
 	};
 
-	const xhr = new XMLHttpRequest();
-	xhr.open('POST', 'http://localhost:8080/Cadastro');
-	xhr.setRequestHeader('Content-type', 'application/json');
-	xhr.onreadystatechange = () => {
-		if (xhr.readyState == 4) {
-			console.log(xhr.responseText);
-		}
-	};
+    const path = `http://localhost:8080/Cadastro`;
 
-	if (validaEmail() && nome!=='' && (sobrenome !== '' && senha !=='')) {
-		xhr.send(JSON.stringify(usuario));
-	}
+     $.ajax({
+        type: 'POST',
+        url: path,
+        data: usuario,
+        success: function (result) {
+            alert(result);
+        },
+        error: function (err) {
+            alert(`Ops! Ocorreu um erro: ${err.statusText}`);
+        }
+    });
 }
 
 function validaEmail() {
@@ -51,6 +48,6 @@ function validaEmail() {
 	) {
 		return true;
 	} else {
-		alert('E-mail invalido');
+        return false;
 	}
 }
