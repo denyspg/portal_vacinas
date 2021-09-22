@@ -32,10 +32,32 @@ function buscaTodasVacinas() {
 	const xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:8080/ListaVacinas/');
     xhr.setRequestHeader('Content-type', 'application/json')
-    xhr.responseType = 'json';
+    xhr.responseType = 'text';
 	xhr.send();
     xhr.onload = function() {
-        const vacinas = xhr.response;
+        const vacinas = JSON.parse(xhr.responseText);
         console.log(vacinas);
+        imprimeVacinas(vacinas);
     }
+}
+
+function imprimeVacinas(json){
+    document.querySelector("table").style.visibility="visible"
+    let linha = document.createElement("tr");
+    let campoNome = document.createElement("td");
+    let campoDescricao = document.createElement("td");
+    for (let i = 0; i < json.length; i++) {
+        let element = array[i];
+        let elementNome = document.createTextNode(element.nome);
+        let elementDescricao = document.createTextNode(element.descricao);
+
+        campoNome.appendChild(elementNome);
+        campoDescricao.appendChild(elementDescricao);
+        
+        linha.appendChild(campoNome);
+        linha.appendChild(campoDescricao);
+    }
+    document.querySelector("tbody").appendChild(linha)
+
+
 }
