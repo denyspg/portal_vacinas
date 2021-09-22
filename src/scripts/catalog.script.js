@@ -16,6 +16,7 @@ function pesquisaVacina() {
         xhr.open('GET', 'http://localhost:8080/ListaVacinas/Pfizer');        
     }
     xhr.setRequestHeader('Content-type', 'application/json')
+    xhr.responseType = 'text';
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState == 4) {
 			console.log(JSON.parse(xhr.response));
@@ -23,6 +24,7 @@ function pesquisaVacina() {
 	};
 
 	xhr.send();
+    imprimeVacinas(JSON.parse(xhr.response));
 	}else{
         alert('É necessário preencher o nome da vacina!')
     }
@@ -47,7 +49,7 @@ function imprimeVacinas(json){
     let campoNome = document.createElement("td");
     let campoDescricao = document.createElement("td");
     for (let i = 0; i < json.length; i++) {
-        let element = array[i];
+        let element = json[i];
         let elementNome = document.createTextNode(element.nome);
         let elementDescricao = document.createTextNode(element.descricao);
 
