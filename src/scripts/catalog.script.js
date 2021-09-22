@@ -46,9 +46,9 @@ function buscaTodasVacinas() {
 function imprimeVacinas(json){
     document.querySelector("table").style.visibility="visible"
     let linha = document.createElement("tr");
-    let campoNome = document.createElement("td");
-    let campoDescricao = document.createElement("td");
     for (let i = 0; i < json.length; i++) {
+        let campoNome = document.createElement("td");
+        let campoDescricao = document.createElement("td");
         let element = json[i];
         let elementNome = document.createTextNode(element.nome);
         let elementDescricao = document.createTextNode(element.descricao);
