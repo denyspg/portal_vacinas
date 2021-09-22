@@ -4,36 +4,31 @@ function pesquisaVacina() {
 	const xhr = new XMLHttpRequest();
     const path = `http://localhost:8080/PesquisaVacinas/${nomeVacina}`;
 
-    xhr.open('GET', path);
+    $.ajax({
+      type: "GET",
+      url: path,   
+      success: function (result) {
+        imprimeVacinas(result);
+      },
+      error: function (err) {
+        console.log(err);
+      }
+ });
 
-    xhr.onreadystatechange = () => {
-		if (xhr.readyState == 4) {
-			console.log(JSON.parse(xhr.response));
-		}
-	};
 
-	xhr.send();
-    imprimeVacinas(JSON.parse(xhr.response));
 }
 
-function imprimeVacinas(json){
-    document.querySelector("table").style.visibility="visible"
-    
-    let linha = document.createElement("tr");
-    
-    for (let i = 0; i < json.length; i++) {
-        let campoNome = document.createElement("td");
-        let campoDescricao = document.createElement("td");
-        let element = json[i];
-        let elementNome = document.createTextNode(element.nome);
-        let elementDescricao = document.createTextNode(element.descricao);
+function imprimeVacinas(data){
+    var tabela = document.getElementById('listaDeVacinas');
+    console.log(data);
 
-        campoNome.appendChild(elementNome);
-        campoDescricao.appendChild(elementDescricao);
-        
-        linha.appendChild(campoNome);
-        linha.appendChild(campoDescricao);
-    }
-
-    document.querySelector("tbody").appendChild(linha);
+    data.forEach(function (obj) {
+        var tr = document.createElement('tr');
+        Object.keys(obj).forEach(function (chave) {
+            var td = document.createElement('td');
+            td.innerHTML = obj[chave];
+            tr.appendChild(td);
+        });
+        tabela.appendChild(tr);
+    });
 }
