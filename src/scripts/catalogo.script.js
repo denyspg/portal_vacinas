@@ -20,6 +20,7 @@ function pesquisaVacina() {
 }
 
 function imprimeVacinas(data){
+  if (data !== "") {
     var tabela = document.getElementById('listaDeVacinas');
     
     tabela.style.visibility="visible"
@@ -29,7 +30,7 @@ function imprimeVacinas(data){
     data.forEach(function (obj) {
         var tr = document.createElement('tr');
         Object.keys(obj).forEach(function (chave) {
-            if (chave == "nome" || chave == "descricao") {
+            if (chave == "nome" || chave == "descricao" || chave == "imagem") {
               
               var td = document.createElement('td');
               td.innerHTML = obj[chave];
@@ -38,6 +39,7 @@ function imprimeVacinas(data){
         });
         tabela.appendChild(tr);
     });
+  }
 }
 
 function limpaTabela(){
