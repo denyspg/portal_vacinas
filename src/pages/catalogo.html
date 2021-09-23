@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Cadastro - Portal &mdash; Vacinas</title>
+  <title>Catálogo - Portal Vacinas</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
@@ -41,116 +41,40 @@
 
     <div class="site-blocks-cover" style="background-image: url('../assets/images/hero_1.jpg');">
       <div class="container">
-        <h1>Catalogo de Vacinas</h1>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+            <div class="site-block-cover-content text-center">
+              <h1>Catalogo de Vacinas</h1>
                 <p>
-                  <h3>BCG</h3>
-                  <img src="../assets/images/vacBCG.png" alt="Vacina BCG" width="200" height="300">
-                  <button
-                    id="infoBCG"
+                  <input 
+                    id="buscaVacina"
+                    class="form-control"
+                    placeholder="Digite aqui o nome da vacina desejada"
+                    type="text">
+                   <br>
+                  <br>
+                  <button 
+                    id="botaoBuscar" 
                     type="button"
-                    class="btn"
-                    onclick="exibeDescricao('bcg')" >Mais informações</button>
+                    class="btn btn-primary px-5 py-3"
+                    onclick="pesquisaVacina();">Buscar</button>
                 </p>
             </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Covid-19 (Pfizer)</h3>
-                <img src="../assets/images/vacPfizer.png" alt="Vacina Pfizer" width="200" height="300">
-                <button
-                    id="infoPfizer"
-                    type="button"
-                    class="btn"
-                    width="200"
-                    onclick="exibeDescricao('pfizer')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Gripe (H1N1)</h3>
-                <img src="../assets/images/vacH1N1.png" alt="Vacina H1N1" width="200" height="300">
-                <button
-                    id="infoH1N1"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('h1n1')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Febre Amarela</h3>
-                <img src="../assets/images/vacFebreAmarela.png" alt="Vacina Febre Amarela" width="200" height="300">
-                <button
-                    id="infoFebreAmarela"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('febreAmarela')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Poliomelite</h3>
-                <img src="../assets/images/vacPolio.png" alt="Vacina Poliomelite" width="200" height="300">
-                <button
-                    id="infoPolio"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('polio')">Mais informações</button>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p>
-                <h3>Rotavirus</h3>
-                <img src="../assets/images/vacRotavirus.png" alt="Vacina Rotavirus" width="200" height="300">
-                <button
-                    id="infoRotavirus"
-                    type="button"
-                    class="btn"
-                    onclick="exibeDescricao('rotaVirus')">Mais informações</button>
-              </p>
-            </div>
+            <table id="listaDeVacinas" class="table table-light align-self-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                    </tr>
+                    <tbody id="tbody">
+    
+                    </tbody>
+                </thead>
+                </table>
           </div>
         </div>
       </div>
     </div>
-
-    <footer class="site-footer">
-      <class class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-
-            <div class="block-7">
-              <h3 class="footer-heading mb-4">Sobre</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
-                sed dolorum excepturi iure eaque, aut unde.</p>
-            </div>
-
-          </div>
-          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-            <h3 class="footer-heading mb-4">Links Rápidos</h3>
-            <ul class="list-unstyled">
-              <li><a href="login.html">Login</a></li>
-              <li><a href="catalogo.html">Busca</a></li>
-              <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-5">
-              <h3 class="footer-heading mb-4">Contato</h3>
-              <ul class="list-unstyled">
-                <li class="address">bla bla bla bla</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">email@email.com</li>
-              </ul>
-            </div>
-
-
-          </div>
-        </div>
-          </class>
-    </footer>
 
   <script src="../assets/js/jquery-3.3.1.min.js"></script>
   <script src="../assets/js/jquery-ui.js"></script>
@@ -160,7 +84,8 @@
   <script src="../assets/js/jquery.magnific-popup.min.js"></script>
   <script src="../assets/js/aos.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../scripts/catalog.script.js"></script>
+  <script src="../scripts/catalogo.script.js"></script>
+  <script src="../scripts/http/pesquisa-vacina.js"></script>
 
 </body>
 
