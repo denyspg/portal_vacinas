@@ -16,10 +16,7 @@ async function cadastrar() {
 	};
 
     const path = `http://localhost:8080/api/Cadastro`;
-    const result = await postUsuario(path, usuario);
-    
-    console.log(result);
-
+    postUsuario(path, usuario);
 }
 
 function validaEmail() {
