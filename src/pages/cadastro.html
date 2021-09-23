@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Cadastro - Portal Vacinas</title>
+  <title>Cadastro - Portal &mdash; Vacinas</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
@@ -17,129 +17,107 @@
 </head>
 
 <body>
-    <div class="site-navbar py-2">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="logo">
-            <div class="site-logo">
-              <a href="../index.html" class="js-logo-clone">Portal Vacina</a>
-            </div>
+  <div class="site-navbar py-2">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="../index.html" class="js-logo-clone">Portal Vacina</a>
           </div>
-          <div class="main-nav d-none d-lg-block">
-            <nav class="site-navigation text-right text-md-center" role="navigation">
-              <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li class="active"><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="catalogo.html">Pesquisar Vacina</a></li>
-              </ul>
-            </nav>
-          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav class="site-navigation text-right text-md-center" role="navigation">
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li class="active"><a href="cadastro.html">Cadastro</a></li>
+              <li><a href="catalogo.html">Pesquisar Vacina</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="site-blocks-cover" style="background-image: url('../assets/images/hero_1.jpg');">
+  <div class="site-blocks-cover" style="background-image: url('../assets/images/hero_1.jpg');">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form>
-  
-            <div class="p-3 p-lg-5 border">
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <label for="c_fname" class="text-black">Primeiro Nome</label>
-                  <input 
-                      id="nome"
-                      class="form-control"
-                      placeholder="Insira seu nome..."
-                      type="text"
-                      oninput="verificaPreenchimento('nome')">
-                </div>
-                <div class="col-md-6">
-                  <label for="c_lname" class="text-black">Último Nome</label>
-                  <input
-                      id="ultimo-nome"
-                      class="form-control"
-                      type="text"
-                      placeholder="Insira seu último nome..."
-                      oninput="verificaPreenchimento('ultimo-nome')">
-                </div>
+
+          <div class="p-3 p-lg-5 border">
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="c_fname" class="text-black">Primeiro Nome<span class="text-danger">*</span></label>
+                <input id="nome" class="form-control" placeholder="Insira seu nome..." type="text">
               </div>
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
-                  <input
-                  id="email"
-                  class="form-control"
-                  type="text"
-                  placeholder="Insira seu e-mail..."
-                  oninput="verificaPreenchimento('email')">
-                  <script src="../scripts/cadastro.script.js "></script>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_password" class="text-black">Senha <span class="text-danger">*</span></label>
-                  <input
-                      id="senha"
-                      class="form-control"
-                      type="password"
-                      placeholder="*********"
-                      oninput="verificaPreenchimento('senha')">
-                  <script src="../scripts/cadastro.script.js "></script>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-lg-12">
-                    <button onclick="cadastrar();" class="btn btn-primary px-5 py-3">Cadastrar</button>
-                </div>
+              <div class="col-md-6">
+                <label for="c_lname" class="text-black">Último Nome<span class="text-danger">*</span></label>
+                <input id="ultimo-nome" class="form-control" type="text" placeholder="Insira seu último nome...">
               </div>
             </div>
-          </form>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
+                <input id="email" class="form-control" type="text" placeholder="Insira seu e-mail...">
+                <script src="../scripts/cadastro.script.js "></script>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_password" class="text-black">Senha <span class="text-danger">*</span></label>
+                <input id="senha" class="form-control" type="password" placeholder="*********">
+                <script src="../scripts/cadastro.script.js "></script>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-lg-12">
+                <button onclick="cadastrar();" class="btn btn-primary px-5 py-3">Cadastrar</button>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
       </div>
     </div>
-  </div>    
+  </div>
 
-    <footer class="site-footer">
-      <class class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+  <footer class="site-footer">
+    <class class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 
-            <div class="block-7">
-              <h3 class="footer-heading mb-4">Sobre</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
-                sed dolorum excepturi iure eaque, aut unde.</p>
-            </div>
-
+          <div class="block-7">
+            <h3 class="footer-heading mb-4">Sobre</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
+              sed dolorum excepturi iure eaque, aut unde.</p>
           </div>
-          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-            <h3 class="footer-heading mb-4">Links Rápidos</h3>
+
+        </div>
+        <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+          <h3 class="footer-heading mb-4">Links Rápidos</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Busca</a></li>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="block-5 mb-5">
+            <h3 class="footer-heading mb-4">Contato</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Busca</a></li>
-              <li><a href="#">Cadastro</a></li>
-              <li><a href="#">Contato</a></li>
+              <li class="address">bla bla bla bla</li>
+              <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
+              <li class="email">email@email.com</li>
             </ul>
           </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-5">
-              <h3 class="footer-heading mb-4">Contato</h3>
-              <ul class="list-unstyled">
-                <li class="address">bla bla bla bla</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">email@email.com</li>
-              </ul>
-            </div>
 
-
-          </div>
         </div>
-          </class>
-    </footer>
+      </div>
+    </class>
+  </footer>
 
   <script src="../assets/js/jquery-3.3.1.min.js"></script>
   <script src="../assets/js/jquery-ui.js"></script>
