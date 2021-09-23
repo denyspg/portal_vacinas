@@ -1,3 +1,5 @@
+document.getElementById("listaDeVacinas").appendChild(document.createElement('td'));
+
 async function pesquisaVacina() {
     limpaTabela();
     const nomeVacina = document.getElementById('buscaVacina').value;
@@ -8,14 +10,19 @@ async function pesquisaVacina() {
 
 function imprimeVacinas(data){
   if (data !== "") {
-    var tabela = document.getElementById('listaDeVacinas');
+    const tabela = document.getElementById('listaDeVacinas');
+    
+    tabela.innerHTML = `<tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                    </tr>`;
 
     data.forEach(function (obj) {
         var tr = document.createElement('tr');
         Object.keys(obj).forEach(function (chave) {
-            if (chave == "nome" || chave == "descricao" || chave == "imagem") {
+            if (chave == "nome" || chave == "descricao") {
               
-              var td = document.createElement('td');
+              const td = document.createElement('td');
               td.innerHTML = obj[chave];
               tr.appendChild(td);
             } 
@@ -26,5 +33,7 @@ function imprimeVacinas(data){
 }
 
 function limpaTabela(){
-  document.getElementById("tbody").innerHTML = "";
+    const tabela = document.getElementById("listaDeVacinas");
+    const td = document.createElement('td');
+    tabela.appendChild(td);
 }
