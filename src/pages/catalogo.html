@@ -58,20 +58,16 @@
                     type="button"
                     class="btn btn-primary px-5 py-3"
                     onclick="pesquisaVacina();">Buscar</button>
-                  <button 
-                    id="botaoBuscarTodas" 
-                    type="button"
-                    class="btn btn-primary px-5 py-3"
-                    onclick="buscaTodasVacinas()">Todas as vacinas</button>
                 </p>
             </div>
-            <table id="listaDeVacinas" class="table table-striped table-dark">
+            <table id="listaDeVacinas" class="table table-light" style="visibility: hidden; overflow: auto; width: 150%;">
               <thead>
                 <tr>
                   <th scope="col">Nome</th>
                   <th scope="col">Descrição</th>
+                  <th scope="col">Imagem</th>
                 </tr>
-                <tbody>
+                <tbody id="tbody">
 
                 </tbody>
               </thead>
@@ -80,42 +76,6 @@
         </div>
       </div>
     </div>
-        <footer class="site-footer">
-      <class class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-
-            <div class="block-7">
-              <h3 class="footer-heading mb-4">Sobre</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
-                sed dolorum excepturi iure eaque, aut unde.</p>
-            </div>
-
-          </div>
-          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-            <h3 class="footer-heading mb-4">Links Rápidos</h3>
-            <ul class="list-unstyled">
-              <li><a href="login.html">Login</a></li>
-              <li><a href="catalogo.html">Busca</a></li>
-              <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-5">
-              <h3 class="footer-heading mb-4">Contato</h3>
-              <ul class="list-unstyled">
-                <li class="address">bla bla bla bla</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">email@email.com</li>
-              </ul>
-            </div>
-
-
-          </div>
-        </div>
-          </class>
-    </footer>
 
   <script src="../assets/js/jquery-3.3.1.min.js"></script>
   <script src="../assets/js/jquery-ui.js"></script>
