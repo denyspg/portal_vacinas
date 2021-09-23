@@ -1,20 +1,7 @@
-function cadastrar() {
-	const nome = document.getElementById('nome').value;
-	const sobrenome = document.getElementById('ultimo-nome').value;
-	const email = document.getElementById('email').value;
-	const senha = document.getElementById('senha').value;
-    
-	if (!validaEmail() || !nome || !sobrenome || !senha) {
-		alert('Dados inválidos!');
-	}
 
-	const usuario = {
-		nome: nome,
-		sobrenome: sobrenome,
-		email: email,
-		senha: senha
-	};
-
+async function cadastrar() {
+    const path = `http://localhost:8080/api/Cadastro`;
+    postUsuario(path, usuario);
     const path = `http://localhost:8080/Cadastro`;
 
      $.ajax({
@@ -49,5 +36,4 @@ function validaEmail() {
 		return true;
 	} else {
         return false;
-	}
 }
