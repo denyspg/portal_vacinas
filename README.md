@@ -8,10 +8,8 @@ Para a visualização das vacinas o usuário precisa estar previamente cadastrad
 ## Arquitetura
 * Engine JS: NodeJs
 * Framework: Express
-* Banco de Dados: Mysql
+* Banco de Dados: MongoDB
 * Front-end: HTML
 
 ## Execução
-* npm install nodejs express -s mysql nodemon
-* No terminal: nodemon app.js
-* Acesse: http://localhost:8080/
+* Acesse: index.html
