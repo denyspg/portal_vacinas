@@ -3,8 +3,9 @@ document.getElementById("listaDeVacinas").appendChild(document.createElement('td
 async function pesquisaVacina() {
     limpaTabela();
     const nomeVacina = document.getElementById('buscaVacina').value;
-    const path = `http://localhost:8080/api/PesquisaVacinas/${nomeVacina}`;
-	const listaVacinas = await getVacinas(path);
+    const path = `http://localhost:4000/api/pesquisa-vacina/${nomeVacina}`;
+    const token = localStorage.getItem('token');
+	const listaVacinas = await getVacinas(path, token);
 	imprimeVacinas(listaVacinas);
 }
 

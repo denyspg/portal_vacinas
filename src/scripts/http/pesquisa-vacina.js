@@ -1,10 +1,18 @@
-async function getVacinas(path){
+async function getVacinas(path, token){
     return new Promise((resolve, reject) => {
         $.ajax({
-            type: "GET",
+            type: 'GET',
             url: path,   
-            success: (response) => resolve(response),
-            error: (error) => reject(error),
+            headers: {
+                'auth-token': token
+            },
+            success: function (response){
+                resolve(response)
+            },
+            error: function (error){
+                console.log(error);
+                alert(error.responseText);
+            },
         });
     });
 }

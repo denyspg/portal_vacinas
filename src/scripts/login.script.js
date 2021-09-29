@@ -1,16 +1,23 @@
-function logar(){
-    const email= document.getElementById("email");
-    const senha = document.getElementById("senha");
+async function logar(){
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
     if(!validaEmail()){
+        alert('E-mail inválido!');
+        return;
+    }
+
+    if(!senha.length){
         alert('Insira a senha!');
         return;
     }
 
-    if(!senha.value.length){
-        alert('Insira a senha!');
-        return;
-    }
+    await postLogar('http://localhost:4000/api/login', { email, senha });
+
+    const loginPlace = window.location.href.indexOf('pages');
+    const firstUrlPath = window.location.href.substring(0, loginPlace);
+    const finalUrlPath = firstUrlPath + 'index.html';
+    window.location.href = finalUrlPath;
 }
 
 function validaEmail(){

@@ -1,4 +1,4 @@
-function cadastrar() {
+async function cadastrar() {
 	const nome = document.getElementById('nome').value;
 	const sobrenome = document.getElementById('ultimo-nome').value;
 	const email = document.getElementById('email').value;
@@ -14,20 +14,13 @@ function cadastrar() {
 		email: email,
 		senha: senha
 	};
-
-    const path = `http://localhost:8080/Cadastro`;
-
-     $.ajax({
-        type: 'POST',
-        url: path,
-        data: usuario,
-        success: function (result) {
-            alert(result);
-        },
-        error: function (err) {
-            alert(`Ops! Ocorreu um erro: ${err.statusText}`);
-        }
-    });
+    const path = `http://localhost:4000/api/cadastrar-usuario`;
+    await postCadastrar(path, usuario);
+    
+    const cadastroPlace = window.location.href.indexOf('cadastro');
+    const firstUrlPath = window.location.href.substring(0, cadastroPlace);
+    const finalUrlPath = firstUrlPath + 'login.html';
+    window.location.href = finalUrlPath;
 }
 
 function validaEmail() {
